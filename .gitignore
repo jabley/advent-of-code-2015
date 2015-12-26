@@ -1,0 +1,6 @@
+# Ignore Haskell intermediary files
+*.hi
+# Ignore object files
+*.o
+# Ignore the executables
+day??
