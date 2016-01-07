@@ -4,3 +4,5 @@
 *.o
 # Ignore the executables
 day??
+.cabal-sandbox
+cabal.sandbox.config
