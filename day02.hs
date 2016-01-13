@@ -14,9 +14,21 @@ sides (l, w, h) = [ (l, w), (w, h), (h, l) ]
 
 area (a, b) = a * b
 
+perimeter (a, b) = 2 * (a + b)
+
 paper ds = (2 * sum ss) + minimum ss where
     ss = map area (sides ds)
 
+ribbon ds = minimum ps + volume ds where
+    ps = map perimeter (sides ds)
+
+volume (l, w, h) = l * w * h
+
 totalPaper = sum . map (paper . dims)
 
-main = puzzle >>= print . totalPaper
+totalVolume = sum . map (ribbon . dims)
+
+main = do
+    p <- puzzle
+    print $ totalPaper p
+    print $ totalVolume p
