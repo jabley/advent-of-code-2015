@@ -14,4 +14,7 @@ isCoin n = (replicate n '0' ==) . take n
 
 mine key = map (h key) [1 ..]
 
-main = puzzle >>= print . head . filter (isCoin 5 . snd) . zip [1 ..] . mine
+main = do
+    p <- puzzle
+    print $ head $ filter (isCoin 5 . snd) $ zip [1 ..] $ mine p
+    print $ head $ filter (isCoin 6 . snd) $ zip [1 ..] $ mine p
