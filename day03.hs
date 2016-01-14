@@ -10,6 +10,7 @@ visited (x, y) history ('^' : xs) = visited (x, y+1) ((x, y) : history) xs
 visited (x, y) history ('v' : xs) = visited (x, y-1) ((x, y) : history) xs
 visited (x, y) history ('>' : xs) = visited (x+1, y) ((x, y) : history) xs
 visited (x, y) history ('<' : xs) = visited (x-1, y) ((x, y) : history) xs
+visited _ _ _ = error "Unsupported input"
 
 santa p = visited (0,0) [] p
 

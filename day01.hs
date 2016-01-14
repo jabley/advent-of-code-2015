@@ -5,10 +5,12 @@ puzzle = openFile "puzzles/day01.txt" ReadMode >>= hGetContents
 solve n [] = n
 solve n ('(' : xs) = solve (n + 1) xs
 solve n (')' : xs) = solve (n - 1) xs
+solve _ _ = error "Unsupported input"
 
 solve' (-1) i _ = i
 solve' floor i ('(' : xs) = solve' (floor+1) (i+1) xs
 solve' floor i (')' : xs) = solve' (floor-1) (i+1) xs
+solve' _ _ _ = error "Unsupported input"
 
 main = do
     p <- puzzle
