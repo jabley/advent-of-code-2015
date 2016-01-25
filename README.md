@@ -7,6 +7,7 @@ Solutions for [adventofcode.com](http://adventofcode.com).
 Requires Haskell and Cabal.
 
 ```
+> cabal sandbox init
 > cabal install base16-bytestring
 > cabal install cryptohash
 ```
